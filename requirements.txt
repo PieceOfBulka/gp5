@@ -1,0 +1,8 @@
+pandas
+kagglehub
+lyricsgenius
+matplotlib
+dotenv
+spotipy
+seaborn
+langdetect
