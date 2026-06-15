@@ -2,9 +2,13 @@ pandas
 kagglehub
 lyricsgenius
 matplotlib
-dotenv
+python-dotenv
 spotipy
 seaborn
 langdetect
 clearml
 scikit-learn
+transformers[torch]
+torch
+accelerate
+ipywidgets
