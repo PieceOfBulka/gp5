@@ -18,7 +18,7 @@ from clearml import Dataset, Task
 
 logging.basicConfig(level=logging.INFO)
 
-task = Task.init(project_name="HSE-GP5", task_name='TF-IDF+LogReg+OneVSall baseline')
+task = Task.init(project_name="HSE-GP5", task_name='TF-IDF+LogReg+OneVSall+class_weight baseline')
 
 configuration={'max_features':5000, 'ngram_range':(1,2), 'stop_words':'english', 'model_state':42, 'test_size':0.2, 'split_state':42}
 task.connect(configuration)
@@ -44,7 +44,7 @@ Xtrain_tfidf = tf.fit_transform(Xtrain)
 Xtest_tfidf = tf.transform(Xtest)
 
 logging.info('Обучаем LogRegи методом OneVSall...')
-model = OneVsRestClassifier(LogisticRegression(random_state=configuration['model_state'],verbose=1))
+model = OneVsRestClassifier(LogisticRegression(random_state=configuration['model_state'],verbose=1,class_weight="balanced"))
 model.fit(Xtrain_tfidf,ytrain)
 
 logging.info('Делаем предсказания...')
