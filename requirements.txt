@@ -7,3 +7,4 @@ spotipy
 seaborn
 langdetect
 clearml
+scikit-learn
