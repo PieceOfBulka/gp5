@@ -56,7 +56,7 @@ task.get_logger().report_single_value(name='f1 micro', value=f1_score(ytest,pred
 task.upload_artifact(name='classification_report',artifact_object=classification_report(ytest,predictions,target_names=mlb.classes_))
 
 logging.info('Сохраняем модель...')
-model_path='onevsall_tfidf.kl'
+model_path='onevsall_tfidf.pkl'
 joblib.dump(model, model_path)
 task.update_output_model(model_path=model_path,model_name='TF-IDF_OneVSall_baseline')
 
