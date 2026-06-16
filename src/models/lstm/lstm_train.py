@@ -18,7 +18,7 @@ from get_dataset import load_dataset, LyricsDataset, collate_batch
 
 logging.basicConfig(level=logging.INFO)
 
-task = Task.init(project_name="HSE-GP5", task_name='BiLSTM, epochs=20 + threshold=0.5 (prev=0.3)')
+task = Task.init(project_name="HSE-GP5", task_name='BiLSTM, epochs=20 + threshold=0.15')
 
 
 configuration={'test_size':0.2,
@@ -30,7 +30,7 @@ configuration={'test_size':0.2,
                'dropout':0.3,
                'epohs_number':20,
                'learning_rate':5e-4,
-               'threshold':0.5,
+               'threshold':0.15,
                'weight_decay':1e-4}
 task.connect(configuration)
 
@@ -122,7 +122,7 @@ for epoch in range(configuration['epohs_number']):
 logging.info('Сохраняем модель...')
 model_path='bilstm.pt'
 torch.save(model.state_dict(), model_path)
-task.update_output_model(model_path=model_path,model_name='bilstm (20 epochs) + threshold=0.5')
+task.update_output_model(model_path=model_path,model_name='bilstm (20 epochs) + threshold=0.15')
 
 logging.info('Результаты сохранены!')
 task.close()
