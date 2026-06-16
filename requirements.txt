@@ -8,7 +8,9 @@ seaborn
 langdetect
 clearml
 scikit-learn
-transformers[torch]
 torch
+torchtext
+transformers
+numpy
 accelerate
 ipywidgets
