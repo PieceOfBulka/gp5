@@ -1,0 +1,16 @@
+pandas
+kagglehub
+lyricsgenius
+matplotlib
+python-dotenv
+spotipy
+seaborn
+langdetect
+clearml
+scikit-learn
+torch
+torchtext
+transformers
+numpy
+accelerate
+ipywidgets
